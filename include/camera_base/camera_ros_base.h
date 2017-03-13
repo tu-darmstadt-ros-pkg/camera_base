@@ -46,7 +46,7 @@ class CameraRosBase {
         topic_diagnostic_(
             prefix.empty() ? "image_raw" : (prefix + "/image_raw"),
             diagnostic_updater_,
-            diagnostic_updater::FrequencyStatusParam(&fps_, &fps_, 0.1, 10),
+            diagnostic_updater::FrequencyStatusParam(&fps_, &fps_, 0.5, 10),
             diagnostic_updater::TimeStampStatusParam(-0.01, 0.1)) {
     cnh_.param<std::string>("frame_id", frame_id_, cnh_.getNamespace());
     cnh_.param<std::string>("identifier", identifier_, "");
